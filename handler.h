@@ -1,3 +1,26 @@
 #pragma once
 
 void acos_handler(void);
+void asinl_handler(void);       // ((long double)asin((double)(x)))
+void atanl_handler(void);      //   ((long double)atan((double)(x)))
+void atan2l_handler(void);      //((long double)atan2((double)(y), (double)(x)))
+void ceill_handler(void)  ;       //((long double)ceil((double)(x)))
+void cosl_handler(void)    ;      //((long double)cos((double)(x)))
+void coshl_handler(void)    ;     //((long double)cosh((double)(x)))
+void expl_handler(void)      ;    //((long double)exp((double)(x)))
+void fabsl_handler(void)      ;   //((long double)fabs((double)(x)))
+void floorl_handler(void)     ;   //((long double)floor((double)(x)))
+void fmodl_handler(void)       ;//((long double)fmod((double)(x), (double)(y)))
+void frexpl_handler(void);      //((long double)frexp((double)(x), (y)))
+void hypotl_handler(void);      //((long double)_hypot((double)(x), (double)(y)))
+void ldexpl_handler(void) ;     //((long double)ldexp((double)(x), (y)))
+void logl_handler(void)    ;     // ((long double)log((double)(x)))
+void log10l_handler(void)   ;     //((long double)log10((double)(x)))
+//void modfl_handler(void)   ;    //((long double)modf((double)(x), (double *)(y)))²»»á¸ã
+void powl_handler(void)       ; //((long double)pow((double)(x), (double)(y)))
+void sinl_handler(void);         // ((long double)sin((double)(x)))
+void sinhl_handler(void);         //((long double)sinh((double)(x)))
+void sqrtl_handler(void) ;        //((long double)sqrt((double)(x)))
+void tanl_handler(void)   ;       //((long double)tan((double)(x)))
+void tanhl_handler(void)   ;      //((long double)tanh((double)(x)))
+void frexpf_handler(void) ; //((float)frexp((double)(x),(y)))

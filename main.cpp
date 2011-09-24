@@ -13,7 +13,7 @@ typedef struct _FunctionEntry
 } FunctionEntry;
 
 FunctionEntry * pEntrys = NULL;
-const int count = 1;
+const int count = 23;
 
 // 内存分配函数
 // 其实是对 calloc 的封装
@@ -58,7 +58,7 @@ void setEntry(FunctionEntry * pEntry, char * declaration, FunctionHandler handle
 	pEntry->declaration = (char *)memoryAllocate(strlen(declaration) + 1);
 	strcpy(pEntry->declaration, declaration);
 
-	// 函数指针无需释放，因此无乱现在是有值还是无值
+	// 函数指针无需释放，因此无论现在是有值还是无值
 	// 直接设置为新的值即可
 	pEntry->handler = handler;
 }
@@ -75,6 +75,29 @@ void initEntrys()
 {
 	pEntrys = (FunctionEntry *)memoryAllocate(sizeof(FunctionEntry) * count);
 	createEntry(0, "double acos(double x)", acos_handler);
+
+	createEntry(1, "double asinl(double x)", asinl_handler);
+	createEntry(2, "double atanl(double x)", atanl_handler);
+	createEntry(3, "double cosl(double x)", cosl_handler);
+	createEntry(4, "double sinl(double x)", sinl_handler);
+	createEntry(5, "double tanl(double x)", tanl_handler);
+	createEntry(6, "double coshl(double x)", coshl_handler);
+	createEntry(7, "double sinh(double x)", sinhl_handler);
+	createEntry(8, "double tanh(double x)", tanhl_handler);
+	createEntry(9, "double atan2l(double x, double y)", atan2l_handler);
+	createEntry(10, "double fabsl(double x)", fabsl_handler);
+
+	createEntry(12, "double ceill(double x)", ceill_handler);
+	createEntry(13, "double floorl(double x)", floorl_handler);
+	createEntry(14, "double expl(double x)", expl_handler);
+	createEntry(15, "double fmodl(double x, double y)", fmodl_handler);
+	//createEntry(16, "double frexpl(double x, int *exp)", frexpl_handler);
+	//createEntry(17, "double hpyotl(double x, double y)", hypotl_handler);
+	createEntry(18, "double ldexpl(double x, int exp)", ldexpl_handler);
+	createEntry(19, "double logl(double x)", logl_handler);
+	createEntry(20, "double log10l(double x)", log10l_handler);
+	createEntry(22, "double powl(double x, double y)", powl_handler);
+	createEntry(11, "double sqrtl(double x)", sqrtl_handler);
 }
 
 void showEntrys()
