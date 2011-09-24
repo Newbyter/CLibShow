@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-#include "util.h"
 #include "handler.h"
+#include "util.h"
 
 //////////////////////////////////////////////////////////////////////////
 // 数据类型定义
