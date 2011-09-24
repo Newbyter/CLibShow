@@ -1,3 +1,26 @@
 #pragma once
 
 void acos_handler(void);
+void asin_handler(void);
+void atan_handler(void);
+void cos_handler(void);
+void sin_handler(void);
+void tan_handler(void);
+void cosh_handler(void);
+void sinh_handler(void);
+void tanh_handler(void);
+void atan2_handler(void);
+void fabs_handler(void);
+void abs_handler(void);
+void ceil_handler(void);
+void floor_handler(void);
+void exp_handler(void);
+void fmod_handler(void);
+void frexp_handler(void);
+void hypot_handler(void);//18
+void ldexp_handler(void);
+void log_handler(void);
+void log10_handler(void);
+void modf_handler(void);
+void pow_handler(void);
+void sqrt_handler(void);

@@ -13,7 +13,7 @@ typedef struct _FunctionEntry
 } FunctionEntry;
 
 FunctionEntry * pEntrys = NULL;
-const int count = 1;
+const int count = 24;
 
 // 内存分配函数
 // 其实是对 calloc 的封装
@@ -75,6 +75,29 @@ void initEntrys()
 {
 	pEntrys = (FunctionEntry *)memoryAllocate(sizeof(FunctionEntry) * count);
 	createEntry(0, "double acos(double x)", acos_handler);
+	createEntry(1, "double asin(double x)", asin_handler);
+	createEntry(2, "double atan(double x)", atan_handler);
+	createEntry(3, "double cos(double x)", cos_handler);
+	createEntry(4, "double sin(double x)", sin_handler);
+	createEntry(5, "double tan(double x)", tan_handler);
+	createEntry(6, "double cosh(double x)", cosh_handler);
+	createEntry(7, "double sinh(double x)", sinh_handler);
+	createEntry(8, "double tanh(double x)", tanh_handler);
+	createEntry(9, "double atan2(double x, double y)", atan2_handler);
+	createEntry(10, "double fabs(double x)", fabs_handler);
+	createEntry(11, "double abs(int x)", abs_handler);
+	createEntry(12, "double ceil(double x)", ceil_handler);
+	createEntry(13, "double floor(double x)", floor_handler);
+	createEntry(14, "double exp(double x)", exp_handler);
+	createEntry(15, "double fmod(double x, double y)", fmod_handler);
+	createEntry(16, "double frexp(double x, int *exp)", frexp_handler);
+	createEntry(17, "double hpyot(double x, double y)", hypot_handler);
+	createEntry(18, "double ldexp(double x, int exp)", ldexp_handler);
+	createEntry(19, "double log(double x)", log_handler);
+	createEntry(20, "double log10(double x)", log10_handler);
+	createEntry(21, "double modf(double x, double *i)", modf_handler);
+	createEntry(22, "double pow(double x, double y)", pow_handler);
+	createEntry(23, "double sqrt(double x)", sqrt_handler);
 }
 
 void showEntrys()
@@ -114,6 +137,8 @@ void begin()
 		{
 			printf("please input number\n");
 		}
+		system("pause");
+		system("cls");
 	} while (true);
 }
 
