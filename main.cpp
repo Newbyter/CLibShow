@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-#include "util.h"
 #include "handler.h"
+#include "util.h"
 
 typedef void (*FunctionHandler)(void);
 
@@ -28,6 +28,10 @@ void * memoryAllocate(size_t size)
 	void * p = calloc(1, size);
 	if (p == NULL)
 	{
+		// 如果内存不足，立刻结束程序，不再继续执行
+		// 比较粗糙的处理手法，但是可以保证不会再发生其他致命错误
+		// 在本项目中不涉及用户数据的保存，因此粗暴的结束程序
+		// 并不会带来数据丢失等问题
 		puts("allocate memory failed!\n");
 		exit(0);
 	}
@@ -36,7 +40,6 @@ void * memoryAllocate(size_t size)
 		return p;
 	}
 }
-
 
 void setEntry(FunctionEntry * pEntry, char * declaration, FunctionHandler handler)
 {
@@ -114,6 +117,7 @@ void begin()
 		puts("function list:");
 		showEntrys();
 		int i = getInt("select (-1 for quit): ");
+
 		if (i == -1)
 		{
 			break;
@@ -126,6 +130,7 @@ void begin()
 		{
 			printf("index out of range [%d, %d]\n", 0, count - 1);
 		}
+
 		system("pause");
 		system("cls");
 	} while (true);

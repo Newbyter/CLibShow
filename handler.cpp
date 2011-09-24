@@ -13,347 +13,139 @@ void acos_handler(void)
 void fabs_handler(void)
 {
 	double x = getDouble("x = ");
-	printf("fabs(%lf) => %lf\n", x, fabs(x));
+	printf("fabs(%lf) => %lf\n", x, fabs(x));	
 }
 
 void abs_handler(void)
 {
-	double x = 0;
-	printf("x = ");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("abs(%d) => %d\n", (int)x, abs((int)x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	int x = getInt("x = ");
+	printf("abs(%d) => %d\n", x, abs(x));
 }
 
 void asin_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("asin(%lf) => %lf\n", x, asin(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("asin(%lf) => %lf\n", x, asin(x));
 }
 
 void atan_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("atan(%lf) => %lf\n", x, atan(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("atan(%lf) => %lf\n", x, atan(x));
 }
 
 void atan2_handler(void)
 {
-	double x = 0.0, y = 0.0;
-	printf("x=");
-	int ret1 = scanf("%lf", &x);
-	printf("y=");
-	int ret2 = scanf("%lf", &y);
-	if (ret1 > 0 && ret2 > 0)
-	{
-		printf("atan2(%lf, %lf) => %lf\n", y, x, atan2(y, x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = "), y = getDouble("y = ");
+	printf("atan2(%lf, %lf) => %lf\n", y, x, atan2(y, x));
 }
 
 void cos_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("cos(%f) => %f\n", x, cos(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("cos(%f) => %f\n", x, cos(x));
 }
 
 void sin_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("sin(%f) => %f\n", x, sin(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("sin(%f) => %f\n", x, sin(x));
 }
 
 void tan_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("tan(%f) => %f\n", x, tan(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("tan(%f) => %f\n", x, tan(x));
 }
 
 void cosh_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("cosh(%f) => %f\n", x, cosh(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("cosh(%f) => %f\n", x, cosh(x));
 }
 void sinh_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("tan(%f) => %f\n", x, sinh(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("tan(%f) => %f\n", x, sinh(x));
 }
 void tanh_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("tan(%f) => %f\n", x, tanh(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("tan(%f) => %f\n", x, tanh(x));
 }
 
 void ceil_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("ceil(%lf) => %lf\n", x, ceil(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("ceil(%lf) => %lf\n", x, ceil(x));
 }
 
 void floor_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("floor(%lf) => %lf\n", x, floor(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("floor(%lf) => %lf\n", x, floor(x));
 }
 
 void exp_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("exp(%lf) => %lf\n", x, exp(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("exp(%lf) => %lf\n", x, exp(x));
 }
 
 void fmod_handler(void)
 {
-	double x = 0.0, y = 0.0;
-	printf("x=");
-	int ret1 = scanf("%lf", &x);
-	printf("y=");
-	int ret2 = scanf("%lf", &y);
-	if (ret1 > 0 && ret2 > 0)
-	{
-		printf("fmod(%lf, %lf) => %lf\n", x, y, fmod(x, y));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = "), y = getDouble("y = ");
+	printf("fmod(%lf, %lf) => %lf\n", x, y, fmod(x, y));
 }
 
 void frexp_handler(void)
 {
-	double x = 0.0, y = 0.0;
+	double x = getDouble("x = "), y = 0.0;
 	int exp;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		y = frexp(x, &exp);
-		printf("%lf = %lf * 2 ^ %d\n", x, y, exp);
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	y = frexp(x, &exp);
+	printf("%lf = %lf * 2 ^ %d\n", x, y, exp);
 }
 
 void hypot_handler(void)
 {
-	double x = 0.0, y = 0.0;
-	printf("x=");
-	int ret1 = scanf("%lf", &x);
-	printf("y=");
-	int ret2 = scanf("%lf", &y);
-	if (ret1 > 0 && ret2 > 0)
-	{
-		printf("hypot(%lf, %lf) => %lf\n", x, y, _hypot(x, y));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = "), y = getDouble("y = ");
+	printf("hypot(%lf, %lf) => %lf\n", x, y, hypot(x, y));
 }
 
 void ldexp_handler(void)
 {
-	double x = 0.0;
-	int exp;
-	printf("x=");
-	int ret1 = scanf("%lf", &x);
-	printf("exp=");
-	int ret2 = scanf("%d", &exp);
-	if (ret1 > 0 && ret2 > 0)
-	{
-		printf("ldexp(%lf, %d) => %lf\n", x, exp, ldexp(x, exp));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	int exp = getInt("exp = ");
+	printf("ldexp(%lf, %d) => %lf\n", x, exp, ldexp(x, exp));
 }
 
 void log_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("log(%lf) => %lf\n", x, log(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("log(%lf) => %lf\n", x, log(x));
 }
 
 void log10_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("log10(%lf) => %lf\n", x, log10(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("log10(%lf) => %lf\n", x, log10(x));
 }
 
 void modf_handler(void)
 {
-	double x = 0.0, y = 0.0, i = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		y = modf(x, &i);
-		printf("%lf = %lf + %lf\n", x, i, y);
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = "), y = 0.0, i = 0.0;
+	y = modf(x, &i);
+	printf("%lf = %lf + %lf\n", x, i, y);
 }
 
 void pow_handler(void)
 {
-	double x = 0.0, exp = 0.0;
-	printf("x=");
-	int ret1 = scanf("%lf", &x);
-	printf("exp=");
-	int ret2 = scanf("%lf", &exp);
-	if (ret1 > 0 && ret2 > 0)
-	{
-		printf("%lf ^ %lf = %lf\n", x, exp, pow(x, exp));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = "), exp = getDouble("exp = ");
+	printf("%lf ^ %lf = %lf\n", x, exp, pow(x, exp));
 }
 
 void sqrt_handler(void)
 {
-	double x = 0.0, exp = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("sqrt(%lf) = %lf\n", x, sqrt(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x = ");
+	printf("sqrt(%lf) = %lf\n", x, sqrt(x));
 }
