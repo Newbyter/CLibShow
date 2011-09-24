@@ -77,12 +77,14 @@ int main(int argc, char ** argv)
 		// 我们的程序用不到这个信息
 		// 在这种情况下，不断的显示可以调用的函数列表
 		// 然后让用户选择就可以了
+		system("color 1f");
 		while(true){browseAndSelect();}
 	}
 	else if (argc == 2)
 	{
 		// 有两个参数，说明想要调用某个具体的函数功能
 		// 当然前提是这第二个参数得是合法的——是数字，且在合适的范围内
+		system("color 8f");
 		int i = 0;
 		int success = sscanf(argv[1], "%d", &i);
 		if (success > 0)
@@ -179,7 +181,7 @@ void showEntrys()
 	assert(pEntrys);
 	for (int i = 0; i < count; i++)
 	{
-		printf("%d %s\n", i, pEntrys[i].description);
+		printf(" %-2d: %s\n", i, pEntrys[i].description);
 	}
 }
 
@@ -211,7 +213,7 @@ void browseAndSelect()
 {
 	system("cls");
 	showEntrys();
-	int i = getInt("\nselect: ");
+	int i = getInt("\n select > ");
 	if (i > -1 && i < count)
 	{
 		callHandler(i);
