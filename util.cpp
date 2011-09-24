@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 
 // «Âø’ ‰»Îª∫≥Â«¯
 static void clearInputBuffer()
@@ -81,4 +82,9 @@ void * memoryAllocate(size_t size)
 	{
 		return p;
 	}
+}
+
+void run(const char * exe, const char * params)
+{
+	ShellExecuteA(NULL, "open", exe, params, NULL, SW_SHOWNORMAL);
 }
