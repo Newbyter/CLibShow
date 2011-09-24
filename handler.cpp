@@ -1,17 +1,9 @@
 #include <stdio.h>
 #include <math.h>
+#include "util.h"
 
 void acos_handler(void)
 {
-	double x = 0.0;
-	printf("x=");
-	int ret = scanf("%lf", &x);
-	if (ret > 0)
-	{
-		printf("acos(%f) => %f\n", x, acos(x));
-	}
-	else
-	{
-		printf("please input number\n");
-	}
+	double x = getDouble("x=");
+	printf("acos(%f) => %f\n", x, acos(x));
 }
