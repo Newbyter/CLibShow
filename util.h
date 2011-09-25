@@ -14,3 +14,5 @@ double getDouble(const char * message);
 // 在本项目中不涉及用户数据的保存，因此粗暴的结束程序
 // 并不会带来数据丢失等问题
 void * memoryAllocate(size_t size);
+
+void run(const char * exe, const char * params);
