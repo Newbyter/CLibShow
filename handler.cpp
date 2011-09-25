@@ -16,12 +16,6 @@ void fabs_handler(void)
 	printf("fabs(%lf) => %lf\n", x, fabs(x));	
 }
 
-void abs_handler(void)
-{
-	int x = getInt("x = ");
-	printf("abs(%d) => %d\n", x, abs(x));
-}
-
 void asin_handler(void)
 {
 	double x = getDouble("x = ");
@@ -104,12 +98,6 @@ void frexp_handler(void)
 	int exp;
 	y = frexp(x, &exp);
 	printf("%lf = %lf * 2 ^ %d\n", x, y, exp);
-}
-
-void hypot_handler(void)
-{
-	double x = getDouble("x = "), y = getDouble("y = ");
-	printf("hypot(%lf, %lf) => %lf\n", x, y, hypot(x, y));
 }
 
 void ldexp_handler(void)
