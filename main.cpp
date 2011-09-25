@@ -22,7 +22,7 @@ typedef struct _FunctionEntry
 //////////////////////////////////////////////////////////////////////////
 
 FunctionEntry * pEntrys = NULL;
-const int count = 23;
+const int count = 22;
 
 int g_argc = 0;
 char ** g_argv = NULL;
