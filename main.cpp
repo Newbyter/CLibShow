@@ -22,7 +22,7 @@ typedef struct _FunctionEntry
 //////////////////////////////////////////////////////////////////////////
 
 FunctionEntry * pEntrys = NULL;
-const int count = 23;
+const int count = 24;
 
 int g_argc = 0;
 char ** g_argv = NULL;
@@ -174,6 +174,7 @@ void initialize()
 	addEntry("double modf(double x, double *i)", modf_handler);
 	addEntry("double pow(double x, double y)", pow_handler);
 	addEntry("double sqrt(double x)", sqrt_handler);
+	addEntry("double absl(double x)", absl_handler);
 }
 
 void showEntrys()

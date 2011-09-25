@@ -149,3 +149,22 @@ void sqrt_handler(void)
 	double x = getDouble("x = ");
 	printf("sqrt(%lf) = %lf\n", x, sqrt(x));
 }
+
+
+
+
+	double absl(double a)
+	{
+		double b;
+		if(a<0)
+			b=-a;
+		else b=a;
+		return b;
+	}
+
+void absl_handler(void)
+{
+
+	double x = getDouble("x = ");
+	printf("absl(%lf)=%lf\n" , x, absl(x));
+}

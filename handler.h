@@ -24,3 +24,4 @@ void log10_handler(void);
 void modf_handler(void);
 void pow_handler(void);
 void sqrt_handler(void);
+void absl_handler(void);
