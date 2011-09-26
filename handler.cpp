@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 #include "util.h"
 
 void acos_handler(void)
@@ -137,3 +138,151 @@ void sqrt_handler(void)
 	double x = getDouble("x = ");
 	printf("sqrt(%lf) = %lf\n", x, sqrt(x));
 }
+
+/////////////////////////////////////////////////////
+//////////////string_handler////////////////////////
+////////////////////////////////////////////////////////
+
+void memchr_handler(void)
+{
+	char *s = getString("s = ");
+	char c = getChar("c = ");
+	size_t n = getSize_t("n = ");
+	printf("memchr(%s, %c, %lu) = %s\n", s, c, n, memchr(s, c, n));
+}
+
+void memcmp_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	size_t n = getSize_t("n = ");
+	printf("memcmp(%s, %s, %lu) = %d\n", s1, s2, n, memcmp(s1, s2, n));
+}
+
+void memcpy_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	size_t n = getSize_t("n = ");
+	printf("memcpy(%s, %s, %lu) = %s\n", s1, s2, n, memcpy(s1, s2, n));
+}
+void memmove_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	size_t n = getSize_t("n = ");
+	printf("memmove(%s, %s, %lu) = %s\n", s1, s2, n, memmove(s1, s2, n));
+}
+void memset_handler(void)
+{
+	char *s = getString("s = ");
+	char c = getChar("c = ");
+	size_t n = getSize_t("n = ");
+	printf("memset(%s, %c, %lu) = %s\n", s, c, n, memset(s, c, n));
+}
+void strcat_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	printf("strcat(%s, %s) = %s\n", s1, s2, strcat(s1, s2));
+}
+void strchr_handler(void)
+{
+	char *s = getString("s = ");
+	char c = getChar("c = ");
+	printf("strchr(%s, %c) = %s\n", s, c, strchr(s, c));
+}
+void strcmp_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	printf("strcmp(%s, %s) = %d\n", s1, s2, strcmp(s1, s2));
+}
+void strcoll_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	printf("strcoll(%s, %s) = %d\n", s1, s2, strcoll(s1, s2));
+}
+void strcpy_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	printf("strcpy(%s, %s) = %s\n", s1, s2, strcpy(s1, s2));
+}
+void strcspn_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	printf("strcspn(%s, %s) = %lu\n", s1, s2, strcspn(s1, s2));
+}
+void strerror_handler(void)
+{
+	char errcode = getChar("c = ");
+	printf("strerror(%c) = %s\n", errcode, strerror(errcode));
+}
+void strlen_handler(void)
+{
+	char *s = getString("s = ");
+	printf("strlen(%s) = %lu\n", s, strlen(s));
+}
+void strncat_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	size_t n = getSize_t("n = ");
+	printf("strncat(%s, %s, %lu) = %s\n", s1, s2, n, strncat(s1, s2, n));
+}
+void strncmp_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	size_t n = getSize_t("n = ");
+	printf("strncmp(%s, %s, %lu) = %lu\n", s1, s2, n, strncmp(s1, s2, n));
+}
+void strncpy_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	size_t n = getSize_t("n = ");
+	printf("strncpy(%s, %s, %lu) = %s\n", s1, s2, n, strncpy(s1, s2, n));
+}
+void strpbrk_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	printf("strpbrk(%s, %s) = %s\n", s1, s2, strpbrk(s1, s2));
+}
+void strrchr_handler(void)
+{
+	char *s = getString("s = ");
+	char c = getChar("c = ");
+	printf("strrchr(%s, %c) = %s\n", s, c, strrchr(s, c));
+}
+void strspn_handler(void)
+{
+	char *s1 = getString("s2 = ");
+	char *s2 = getString("s2 = ");
+	printf("strspn(%s, %s) = %lu\n", s1, s2, strspn(s1, s2));
+}
+void strstr_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	printf("strstr(%s, %s) = %s\n", s1, s2, strstr(s1, s2));
+}
+void strtok_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	printf("strtok(%s, %s) = %s\n", s1, s2, strtok(s1, s2));
+}
+void strxfrm_handler(void)
+{
+	char *s1 = getString("s1 = ");
+	char *s2 = getString("s2 = ");
+	size_t n = getSize_t("n = ");
+	printf("strxfrm(%s, %s, %lu) = %lu\n", s1, s2, n, strxfrm(s1, s2, n));
+}
+
+
