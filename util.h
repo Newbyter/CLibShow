@@ -6,6 +6,9 @@ int getInt(const char * message);
 // 让用户输入一个 double 型的数字
 double getDouble(const char * message);
 
+// 让用户输入一个 char 型字符
+char getChar(const char * message);
+
 // 内存分配函数
 // 其实是对 calloc 的封装
 // 之所以要再封装，是在 calloc 的基础上定义了内存分配失败时的处理策略

@@ -63,6 +63,40 @@ double getDouble(const char * message)
 	}
 }
 
+// 让用户输入一个 char 型字符
+char getChar(const char * message)
+{
+	while (true)
+	{
+		if (message != NULL)
+		{
+			printf(message);
+		}
+		char v = 0;
+		int success = scanf("%c", &v);
+		if (success != 0)
+		{
+			clearInputBuffer();
+			// 如果用户输入了中文字符，则要求用户重新输入
+			if (v < 0)
+			{
+				continue;
+			}
+			else
+			{
+				return v;
+			}
+		}
+		else
+		{
+			// 如果用户输入了垃圾数据，则将要求用户重新输入
+			// 在此之前，先清除当前输入缓冲中的字符，否则会造成
+			// 下次 scanf() 也会失败，导致无限循环
+			clearInputBuffer();
+		}
+	}
+}
+
 // 内存分配函数
 // 其实是对 calloc 的封装
 // 之所以要再封装，是在 calloc 的基础上定义了内存分配失败时的处理策略
