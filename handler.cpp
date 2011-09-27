@@ -3,6 +3,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
+#include <locale.h>
 #include "util.h"
 
 void acos_handler(void)
@@ -206,3 +208,109 @@ void toupper_handler(void)
 	char x = getChar("input a character x = ");
 	printf("character is %c, corresponding ASCII is %d, toupper(%d) = %d\n", x, x, x, toupper(x));
 }
+
+// stdlib.h库
+void strtod_handler(void)
+{
+	// double strtod(const char *s, char **endptr);
+	char s[50], *endptr;
+	printf("s = ");
+	scanf("%s", s);
+	printf("x = %lf\n", strtod(s, &endptr));
+	if (endptr[0] != '\0')
+	{
+		printf("endptr = %s\n", endptr);
+	}	
+}
+
+void strtol_handler(void)
+{
+	// long strtol(const char *s, char **endptr, int base);
+	char s[50], *endptr;
+	printf("s = ");
+	scanf("%s", s);
+	int base = getInt("base = ");
+	
+	// 防止base超出范围
+	while (base != 0 && (base < 2 || base > 36))
+	{
+		printf("The base range is [2,36], or base is equal to 0\n");
+		base = getInt("base = ");
+	}
+	printf("x = %ld\n", strtol(s, &endptr, base));
+
+	// 如果字符串中的整数值超出long int的表示范围（上溢或下溢）
+	// 则strtol返回它所能表示的最大（或最小）整数，并设置errno为ERANGE
+	if (errno == ERANGE)
+	{
+		printf("%s\n", strerror(errno));
+		errno = 0;		// 重置errno
+	}
+}
+
+void strtoul_handler(void)
+{
+	// unsigned long strtoul(const char *s, char **endptr, int base);
+	char s[50], *endptr;
+	printf("s = ");
+	scanf("%s", s);
+	int base = getInt("base = ");
+	
+	// 防止base超出范围
+	while (base != 0 && (base < 2 || base > 36))
+	{
+		printf("The base range is [2,36], or base is equal to 0\n");
+		base = getInt("base = ");
+	}
+	printf("x = %lu\n", strtoul(s, &endptr, base));
+
+	// 如果字符串中的整数值超出unsigned long的表示范围
+	// 则strtoul返回它所能表示的最大整数，并设置errno为ERANGE
+	if (errno == ERANGE)
+	{
+		printf("%s\n", strerror(errno));
+		errno = 0;		// 重置errno
+	}
+}
+
+void system_handler(void)
+{
+	// int system(const char *s);
+	char s[200];
+	printf("s = ");
+	scanf("%s", s);
+	system(s);
+}
+
+/**************以下函数还需进一步研究*****************************
+void mblen_handler(void)
+{
+	// int mblen(const char *s, size_t n);
+	char s[200];
+	printf("s = ");
+	scanf("%s", s);
+	int n = getInt("n = ");
+	setlocale (LC_ALL,"");
+	printf("x = %d", mblen(s, n ? n : strlen(s)));
+}
+
+void mbstowcs_handler(void)
+{
+	// size_t mbstowcs(wchar_t *wcs, const char *s, size_t n);
+	char mb[200];
+	wchar_t wc[400];
+	int n = getInt("n = ");
+	setlocale (LC_ALL,"");
+	printf("mb = ");
+	scanf("%s", mb);
+	mbstowcs(wc, mb, n ? n : strlen(mb));
+
+}
+//void mbtowc_handler(void);
+//void wcstombs_handler(void);
+//int wctomb_handler(void);
+
+//int mbtowc(wchar_t *pwc, const char *s, size_t n);
+//size_t wcstombs(char *s, const wchar_t *wcs, size_t n);
+//int wctomb(char *s, wchar_t wchar);
+*****************************************************************/

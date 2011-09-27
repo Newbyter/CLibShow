@@ -22,7 +22,7 @@ typedef struct _FunctionEntry
 //////////////////////////////////////////////////////////////////////////
 
 FunctionEntry * pEntrys = NULL;
-const int count = 35;
+const int count = 39;
 
 int g_argc = 0;
 char ** g_argv = NULL;
@@ -174,7 +174,7 @@ void initialize()
 	addEntry("double pow(double x, double y)", pow_handler);
 	addEntry("double sqrt(double x)", sqrt_handler);
 
-	//ctype.h¿âº¯Êý
+	// ctype.h¿âº¯Êý
 	addEntry("int isalnum(int c)", isalnum_handler);
 	addEntry("int isalpha(int c)", isalpha_handler);
 	addEntry("int iscntrl(int c)", iscntrl_handler);
@@ -188,6 +188,12 @@ void initialize()
 	addEntry("int isxdigit(int c)", isxdigit_handler);
 	addEntry("int tolower(int c)", tolower_handler);
 	addEntry("int toupper(int c)", toupper_handler);
+
+	// stdlib.h¿âº¯Êý
+	addEntry("double strtod(const char *s, char **endptr)", strtod_handler);
+	addEntry("long strtol(const char *s, char **endptr, int base)", strtol_handler);
+	addEntry("unsigned long strtoul(const char *s, char **endptr, int base)", strtoul_handler);
+	addEntry("int system(const char *s)", system_handler);
 }
 
 void showEntrys()
