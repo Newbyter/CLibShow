@@ -22,7 +22,7 @@ typedef struct _FunctionEntry
 //////////////////////////////////////////////////////////////////////////
 
 FunctionEntry * pEntrys = NULL;
-const int count = 23;
+const int count = 44;
 
 int g_argc = 0;
 char ** g_argv = NULL;
@@ -173,6 +173,28 @@ void initialize()
 	addEntry("double modf(double x, double *i)", modf_handler);
 	addEntry("double pow(double x, double y)", pow_handler);
 	addEntry("double sqrt(double x)", sqrt_handler);
+	addEntry("void * memchr(const void * s, int c, size_t n)", memchr_handler);
+	addEntry("int memcmp(const void * s1, const void * s2, size_t n)", memcmp_handler);
+	addEntry("void * memcpy(void * s1, const void * s2, size_t n)", memcpy_handler);
+	addEntry("void * memmove(void * s1, const void * s2, size_t n)", memmove_handler);
+	addEntry("void * memset(void * s, int c, size_t n)", memset_handler);
+	addEntry("char * strcat(char * s1, const char * s2)", strcat_handler);
+	addEntry("char * strchr(const char * s, int c)", strchr_handler);
+	addEntry("int strcmp(const char * s1, const char s2)", strcmp_handler);
+	addEntry("int strcoll(const char * s1, const char s2)", strcoll_handler);
+	addEntry("char * strcpy(char * s1, const char * s2)", strcpy_handler);
+	addEntry("size_t strcspn(const char * s1, const char *s2)", strcspn_handler);
+	addEntry("char * strerror(int errcode)", strerror_handler);
+	addEntry("size_t strlen(const char * s)", strlen_handler);
+	addEntry("char * strncat(char s1, const char * s2, size_t n)", strncat_handler);
+	addEntry("int strncmp(const char * s1, const char * s2, size_t n)", strncmp_handler);
+	addEntry("char * strncpy(char * s1, const char * s2, size_t n)", strncpy_handler);
+	addEntry("char * strpbrk(const char * s1, const char * s2)", strpbrk_handler);
+	addEntry("char * strrchr(const char * s, int c)", strrchr_handler);
+	addEntry("size_t strspn(const char * s1, const char * s2)", strspn_handler);
+	addEntry("char * strstr(const char * s1, const char * s2)", strstr_handler);
+	addEntry("char * strtok(char * s1, const char * s2)", strtok_handler);
+	addEntry("size_t strxfrm(char * s1, const char * s2, size_t n)", strxfrm_handler);
 }
 
 void showEntrys()
