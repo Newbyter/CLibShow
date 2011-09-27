@@ -62,6 +62,81 @@ double getDouble(const char * message)
 		}
 	}
 }
+//////////////////////输入一个char型字符////////////
+char getChar(const char * message)
+{
+	while (true)
+	{
+		if (message != NULL)
+		{
+			printf(message);
+		}
+		char v = '0';
+		int success = scanf("%c", &v);
+		if (success != 0)
+		{
+			clearInputBuffer();
+			return v;
+		}
+		else
+		{
+			// 如果用户输入了垃圾数据，则将要求用户重新输入
+			// 在此之前，先清除当前输入缓冲中的字符，否则会造成
+			// 下次 scanf() 也会失败，导致无限循环
+			clearInputBuffer();
+		}
+	}
+}
+//////////////////////输入一个string字符串///////////
+char * getString(const char * message)
+{
+	while (true)
+	{
+		if (message != NULL)
+		{
+			printf(message);
+		}
+		char* v = new char[100];
+		int success = scanf("%s", v);
+		if (success != 0)
+		{
+			clearInputBuffer();
+			return v;
+		}
+		else
+		{
+			// 如果用户输入了垃圾数据，则将要求用户重新输入
+			// 在此之前，先清除当前输入缓冲中的字符，否则会造成
+			// 下次 scanf() 也会失败，导致无限循环
+			clearInputBuffer();
+		}
+	}
+}
+////////////////////输入一个size_t数字///////////
+size_t getSize_t(const char * message)
+{
+	while (true)
+	{
+		if (message != NULL)
+		{
+			printf(message);
+		}
+		size_t v = 0;
+		int success = scanf("%lu", &v);
+		if (success != 0)
+		{
+			clearInputBuffer();
+			return v;
+		}
+		else
+		{
+			// 如果用户输入了垃圾数据，则将要求用户重新输入
+			// 在此之前，先清除当前输入缓冲中的字符，否则会造成
+			// 下次 scanf() 也会失败，导致无限循环
+			clearInputBuffer();
+		}
+	}
+}
 
 // 内存分配函数
 // 其实是对 calloc 的封装
