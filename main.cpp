@@ -167,15 +167,15 @@ void initialize()
 	addEntry("double exp(double x)", exp_handler);
 	addEntry("double fmod(double x, double y)", fmod_handler);
 	addEntry("double frexp(double x, int *exp)", frexp_handler);
-	addEntry("double hpyot(double x, double y)", hypot_handler);
 	addEntry("double ldexp(double x, int exp)", ldexp_handler);
 	addEntry("double log(double x)", log_handler);
 	addEntry("double log10(double x)", log10_handler);
 	addEntry("double modf(double x, double *i)", modf_handler);
 	addEntry("double pow(double x, double y)", pow_handler);
 	addEntry("double sqrt(double x)", sqrt_handler);
-	addEntry("double absl(double x)", absl_handler);
-}
+	addEntry("int abs(int x)", abs_handler);
+	addEntry("double labs(double x)", labs_handler); 
+
 
 void showEntrys()
 {

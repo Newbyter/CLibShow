@@ -1,8 +1,10 @@
-
+﻿
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include "util.h"
+#include "stdlib.h"
+#include "string.h"
 
 void acos_handler(void)
 {
@@ -14,12 +16,6 @@ void fabs_handler(void)
 {
 	double x = getDouble("x = ");
 	printf("fabs(%lf) => %lf\n", x, fabs(x));	
-}
-
-void abs_handler(void)
-{
-	int x = getInt("x = ");
-	printf("abs(%d) => %d\n", x, abs(x));
 }
 
 void asin_handler(void)
@@ -106,12 +102,6 @@ void frexp_handler(void)
 	printf("%lf = %lf * 2 ^ %d\n", x, y, exp);
 }
 
-void hypot_handler(void)
-{
-	double x = getDouble("x = "), y = getDouble("y = ");
-	printf("hypot(%lf, %lf) => %lf\n", x, y, hypot(x, y));
-}
-
 void ldexp_handler(void)
 {
 	double x = getDouble("x = ");
@@ -151,20 +141,16 @@ void sqrt_handler(void)
 }
 
 
-
-
-	double absl(double a)
-	{
-		double b;
-		if(a<0)
-			b=-a;
-		else b=a;
-		return b;
-	}
-
-void absl_handler(void)
+void abs_handler(void)
 {
-
-	double x = getDouble("x = ");
-	printf("absl(%lf)=%lf\n" , x, absl(x));
+	int x = getInt("x = ");
+	printf("abs(%d) = %d\n", x, abs(x));
 }
+
+void labs_handler(void)
+{
+	double x = getDouble("x = ");
+	printf("labs(%lf) = %lf\n", x, labs(x));
+}
+
+
