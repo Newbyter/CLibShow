@@ -50,3 +50,14 @@ void strspn_handler(void);
 void strstr_handler(void);
 void strtok_handler(void);
 void strxfrm_handler(void);
+/////////////////////////////////////////////////////////
+///////////stdlib///////////////////////////////////////
+/////////////////////////////////////////////////////////
+void abs_handler(void);
+void atof_handler(void);
+void atoi_handler(void);
+void bsearch_handler(void);
+void div_handler(void);
+void getenv_handler(void);
+void qsort_handler(void);
+void rand_handler(void);

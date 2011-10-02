@@ -284,5 +284,45 @@ void strxfrm_handler(void)
 	size_t n = getSize_t("n = ");
 	printf("strxfrm(%s, %s, %lu) = %lu\n", s1, s2, n, strxfrm(s1, s2, n));
 }
-
-
+/////////////////////////////////////////////////////
+//////////////stdlib_handler////////////////////////
+////////////////////////////////////////////////////////
+void abs_handler(void)
+{
+	int x=getInt("x=");
+	printf("abs(%d)=>%d\n",x,abs(x));
+}
+void atof_handler(void)
+{
+	const char *s=getString("s=");
+	printf("atof(%s)=%lf\n",s,atof(s));
+}
+void atoi_handler(void)
+{
+	const char *s=getString("s=");
+	printf("atoi(%s)=%d",s,atoi(s));
+}
+void bsearch_handler(void)
+{
+	printf("Sorry!暂时不能实现\n");
+}
+void div_handler(void)
+{
+	int number=getInt("number=");
+	int denom=getInt("denome=");
+	printf("div(%d,%d)=%d\n",number,denom,div(number,denom));
+}
+void getenv_handler(void)
+{
+	const char *name=getString("name=");
+	printf("getenv(%s)=%s\n",name,getenv(name));
+}
+void qsort_handler(void)
+{
+	printf("SORRY!该函数暂时无法实现\n");
+}
+void rand_handler(void)
+{
+	int a;
+	printf("rand(void)=%d\n",rand());
+}
