@@ -22,7 +22,7 @@ typedef struct _FunctionEntry
 //////////////////////////////////////////////////////////////////////////
 
 FunctionEntry * pEntrys = NULL;
-const int count = 44;
+const int count = 52;
 
 int g_argc = 0;
 char ** g_argv = NULL;
@@ -195,6 +195,14 @@ void initialize()
 	addEntry("char * strstr(const char * s1, const char * s2)", strstr_handler);
 	addEntry("char * strtok(char * s1, const char * s2)", strtok_handler);
 	addEntry("size_t strxfrm(char * s1, const char * s2, size_t n)", strxfrm_handler);
+	addEntry("int abs(int i)",abs_handler);
+	addEntry("double atof(const char *s)",atof_handler);
+	addEntry("int atoi(const char *s)",atoi_handler);
+	addEntry("void *bsearch(const void *key, const void *base, size_t nelem, size_t size, int (*cmp)(const void *ck, const void *ce))",bsearch_handler);
+	addEntry("div_t div(int numer, int denom)",div_handler);
+	addEntry("char *getenv(const char *name)",getenv_handler);
+	addEntry("void qsort(void *base, size_t nelem, size_t size, int (*cmp)(const void *e1, const void *e2))",qsort_handler);
+	addEntry("int rand(void)",rand_handler);
 }
 
 void showEntrys()
