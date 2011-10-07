@@ -702,8 +702,7 @@ void sscanf_handler(void)						//	 Read formatted data from string (function )
 
 void vfprintf_handler(void)//	 Write formatted variable argument list to stream (function)
 {
-/*
-	{	
+
 		FILE *fp;
 		int vfpf(char *fmt, ...);
 		int inumber = 30;
@@ -720,68 +719,64 @@ void vfprintf_handler(void)//	 Write formatted variable argument list to stream 
 		fscanf(fp,"%d %f %s", &inumber, &fnumber, string);
 		printf("%d %f %s\n", inumber, fnumber, string);
 		fclose(fp);	
-	}
-	
-	int vfpf(char *fmt, ...)
-	{
-		va_list argptr;
-		int cnt;
-		va_start(argptr, fmt);
-		cnt = vfprintf(fp, fmt, argptr);
-		va_end(argptr);
-		return (cnt);
-	}
-*/	
-	
 }
 
+int vfpf(char *fmt, ...)
+{
+	FILE *fp;
+	va_list argptr;
+	int cnt;
+	va_start(argptr, fmt);
+	cnt = vfprintf(fp, fmt, argptr);
+	va_end(argptr);
+	return (cnt);
+}
 
 
 
 void vprintf_handler(void)//	 Print formatted variable argument list to stdout (function)
 {
-/*	int vpf(char *fmt, ...)
-	{
-		va_list argptr;
-		int cnt;
-		va_start(argptr, format);
-		cnt = vprintf(fmt, argptr);
-		va_end(argptr);
-		return(cnt);
-	}
-	{
-		int inumber = 30;
-		float fnumber = 90.0;
-		char *string = "abc";
-		vpf("%d %f %s\n",inumber,fnumber,string);
-	}*/
+
+	int vpf(char *fmt, ...);
+	int inumber = 30;
+	float fnumber = 90.0;
+	char *string = "abc";
+	vpf("%d %f %s\n",inumber,fnumber,string);
+	
 }
 
-
+int vpf(char *fmt, ...)
+{
+	va_list argptr;
+	int cnt;
+	va_start(argptr, fmt);
+	cnt = vprintf(fmt, argptr);
+	va_end(argptr);
+	return(cnt);
+}
 
 
 void vsprintf_handler(void)//	 Print formatted variable argument list to string (function)
 {
 
-/*	char buffer[80];
+	char buffer[80];
 	int vspf(char *fmt, ...);
 	int inumber = 30;
 	float fnumber = 90.0;
 	char string[4] = "abc";
 	vspf("%d %f %s", inumber, fnumber, string);
 	printf("%s\n", buffer);
-
-	int vspf(char *fmt, ...)
-	{
-		va_list argptr;
-		int cnt;
-		va_start(argptr, fmt);
-		cnt = vsprintf(buffer, fmt, argptr);
-		va_end(argptr);
-		return(cnt);
-	}*/
 }
-
+int vspf(char *fmt, ...)
+{
+	char buffer[80];
+	va_list argptr;
+	int cnt;
+	va_start(argptr, fmt);
+	cnt = vsprintf(buffer, fmt, argptr);
+	va_end(argptr);
+	return(cnt);
+}
 
 
   
