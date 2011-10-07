@@ -22,7 +22,7 @@ typedef struct _FunctionEntry
 //////////////////////////////////////////////////////////////////////////
 
 FunctionEntry * pEntrys = NULL;
-const int count = 24;
+const int count = 100;
 
 int g_argc = 0;
 char ** g_argv = NULL;
@@ -173,8 +173,75 @@ void initialize()
 	addEntry("double modf(double x, double *i)", modf_handler);
 	addEntry("double pow(double x, double y)", pow_handler);
 	addEntry("double sqrt(double x)", sqrt_handler);
-	addEntry("int abs(int x)", abs_handler);
-	addEntry("double labs(double x)", labs_handler); 
+	addEntry("void * memchr(const void * s, int c, size_t n)", memchr_handler);
+	addEntry("int memcmp(const void * s1, const void * s2, size_t n)", memcmp_handler);
+	addEntry("void * memcpy(void * s1, const void * s2, size_t n)", memcpy_handler);
+	addEntry("void * memmove(void * s1, const void * s2, size_t n)", memmove_handler);
+	addEntry("void * memset(void * s, int c, size_t n)", memset_handler);
+	addEntry("char * strcat(char * s1, const char * s2)", strcat_handler);
+	addEntry("char * strchr(const char * s, int c)", strchr_handler);
+	addEntry("int strcmp(const char * s1, const char s2)", strcmp_handler);
+	addEntry("int strcoll(const char * s1, const char s2)", strcoll_handler);
+	addEntry("char * strcpy(char * s1, const char * s2)", strcpy_handler);
+	addEntry("size_t strcspn(const char * s1, const char *s2)", strcspn_handler);
+	addEntry("char * strerror(int errcode)", strerror_handler);
+	addEntry("size_t strlen(const char * s)", strlen_handler);
+	addEntry("char * strncat(char s1, const char * s2, size_t n)", strncat_handler);
+	addEntry("int strncmp(const char * s1, const char * s2, size_t n)", strncmp_handler);
+	addEntry("char * strncpy(char * s1, const char * s2, size_t n)", strncpy_handler);
+	addEntry("char * strpbrk(const char * s1, const char * s2)", strpbrk_handler);
+	addEntry("char * strrchr(const char * s, int c)", strrchr_handler);
+	addEntry("size_t strspn(const char * s1, const char * s2)", strspn_handler);
+	addEntry("char * strstr(const char * s1, const char * s2)", strstr_handler);
+	addEntry("char * strtok(char * s1, const char * s2)", strtok_handler);
+	addEntry("size_t strxfrm(char * s1, const char * s2, size_t n)", strxfrm_handler);
+	addEntry("int abs(int i)",abs_handler);
+	addEntry("double atof(const char *s)",atof_handler);
+	addEntry("int atoi(const char *s)",atoi_handler);
+	addEntry("void *bsearch(const void *key, const void *base, size_t nelem, size_t size, int (*cmp)(const void *ck, const void *ce))",bsearch_handler);
+	addEntry("div_t div(int numer, int denom)",div_handler);
+	addEntry("char *getenv(const char *name)",getenv_handler);
+	addEntry("void qsort(void *base, size_t nelem, size_t size, int (*cmp)(const void *e1, const void *e2))",qsort_handler);
+	addEntry("int rand(void)",rand_handler);
+	addEntry("int remove(const char* filename)",remove_handler);
+	addEntry("int rename(const char* oldname, const char* newname);",rename_handler);
+	addEntry("FILE* tmpfile()",tmpfile_handler);
+	addEntry("char* tmpnam(char s[L_tmpnam])",tmpnam_handler);
+	addEntry("int fclose(FILE *stream)",fclose_handler);
+	addEntry("int fflush(FILE* stream)",fflush_handler);
+	addEntry("FILE * fopen(const char * path,const char * mode)",fopen_handler);
+	addEntry("FILE *freopen(char *filename, char *type, FILE *stream);",frexp_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("int setvbuf(FILE *stream, char *buf, int type, unsigned size)",setvbuf_handler);
+	addEntry("int fprintf(FILE *stream,char *format [,argument])",fprintf_handler);
+	addEntry("int fscanf(FILE *stream, char *format,[argument...])",fscanf_handler);
+	addEntry("int printf(const char *format,[argument])",printf_handler);
+	addEntry("int scanf(char *format[,argument,...])",scanf_handler);
+	addEntry("int sprintf( char *buffer, const char *format [, argument] бн )",sprintf_handler);
+	addEntry("int sscanf(const char *buffer,const char *format[,argument ]...)",sscanf_handler);
+	addEntry("int vfprintf(FILE *stream, char *format, va_list param)",vfprintf_handler);
+	addEntry("int vprintf(char *format, va_list param)",vprintf_handler);
+	addEntry("int vsprintf(char *string, char *format, va_list param)",vsprintf_handler);
+	addEntry("int fgetc(FILE *stream)",fgetc_handler);
+	addEntry("char *fgets(char *s, int n, FILE *stream)",fgets_handler);
+	addEntry(" int fputc(int ch, FILE *stream)",fputc_handler);
+	addEntry(" int fputs(char *string, FILE *stream)",fputs_handler);
+/*	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);
+	addEntry("void setbuf(FILE *steam, char *buf)",setbuf_handler);*/
+
+
+}
 
 
 void showEntrys()
